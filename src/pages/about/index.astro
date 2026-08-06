@@ -1,7 +1,18 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import H1 from "../../components/Heading1.astro";
+import Section from '../../components/Section.astro';
+import P from "../../components/Paragraph.astro";
 ---
 
-<Layout>
-	<h1>Meow</h1>
+<Layout title="About">
+	<H1>About Us</H1>
+	<P>Hello, <i>world!</i></P>
+	<P>Blah blah blah.</P>
+	<Section name="What We Do">
+		<P>Stuff.</P>
+	</Section>
+	<Section name="Even more stuff">
+		<P>Yep.</P>
+	</Section>
 </Layout>

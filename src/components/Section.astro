@@ -1,0 +1,15 @@
+---
+import H2 from "./Heading2.astro";
+
+interface Props {
+	name: string;
+	id?: string;
+}
+
+const { name, id = name.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replaceAll(/[^a-z0-9]/g, "-") } = Astro.props;
+---
+
+<section id={id} class="lg:pt-4 md:pt-2 pt-1">
+	<H2>{name}</H2>
+	<slot />
+</section>

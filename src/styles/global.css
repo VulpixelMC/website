@@ -1,1 +1,38 @@
 @import "tailwindcss";
+
+@font-face {
+	font-family: Recursive;
+	src: url("../assets/font/Recursive_VF_1.085.woff2");
+}
+
+@font-face {
+	font-family: Recursive Mono;
+	src: url("../assets/font/Recursive_VF_1.085.woff2");
+	font-variation-settings: "MONO" 1.0;
+}
+
+@theme {
+	--font-sans: "Recursive", sans-serif;
+	--font-monospace: "Recursive Mono", monospace;
+	--color-generic-white: var(--color-gray-300);
+	--color-generic-gray: var(--color-gray-400);
+	--color-generic-black: var(--color-gray-900);
+}
+
+@utility mobile-select-none {
+	/* prevent mobile users from accidentally selecting text where inappropriate */
+	@apply lg:select-auto select-none; 
+}
+
+@utility nav-element {
+	@apply text-gray-100 bg-gray-500 dark:bg-gray-700;
+}
+
+@utility nav-hover {
+	@apply hover:bg-gray-600 dark:hover:bg-gray-800;
+}
+
+@utility nav-btn {
+	@apply nav-element nav-hover;
+	@apply active:bg-gray-600 dark:active:bg-gray-800;
+}
