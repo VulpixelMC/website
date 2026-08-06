@@ -10,6 +10,8 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
+ 
+  site: "https://vulpixel.org",
 
   integrations: [mdx()]
 });
