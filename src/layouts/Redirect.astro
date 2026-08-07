@@ -1,0 +1,20 @@
+---
+import Link from '../components/Link.astro';
+import H1 from '../components/Heading1.astro';
+import P from '../components/Paragraph.astro';
+import Layout from './Layout.astro';
+
+interface Props {
+    name: string;
+    link: string;
+}
+
+const { name, link } = Astro.props;
+---
+
+<Layout title=`Redirecting to ${name}`>
+    <meta http-equiv="refresh" content=`0; URL=${link}` slot="head">
+    <link rel="canonical" href={link} slot="head">
+    <H1>Redirecting...</H1>
+    <P class="text-lg">You are being redirected. If you are not redirected soon, <Link href={link}>click here</Link>.</P>
+</Layout>
