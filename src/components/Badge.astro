@@ -1,0 +1,20 @@
+---
+interface Props {
+	id: string;
+	category: "available" | "built-with" | "documentation" | "donate" | "requires" | "social" | "supported" | "unsupported" | "translate";
+	size: "cozy" | "compact" | "cozy-minimal" | "compact-minimal";
+	url: string;
+}
+
+const { id, category, size, url } = Astro.props;
+
+let height: number;
+switch (size) {
+	case "cozy": height = 56;
+	case "cozy-minimal": height = 56;
+	case "compact": height = 40;
+	case "compact-minimal": height = 40;
+};
+---
+
+<a href={url}><img alt={id} class="touchscreen:select-none brightness-img-hover sm:p-0.5" height={height} src=`https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/${size}/${category}/${id}_vector.svg`></a>

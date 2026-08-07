@@ -37,3 +37,7 @@
 	@apply nav-element nav-hover;
 	@apply active:bg-gray-600 dark:active:bg-gray-800;
 }
+
+@utility brightness-img-hover {
+	@apply hover:brightness-125 transition duration-200 ease-in-out;
+}

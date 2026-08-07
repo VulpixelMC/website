@@ -5,16 +5,16 @@ import P from '../components/Paragraph.astro';
 import Layout from './Layout.astro';
 
 interface Props {
-    name: string;
-    link: string;
+	name: string;
+	url: string;
 }
 
-const { name, link } = Astro.props;
+const { name, url } = Astro.props;
 ---
 
 <Layout title=`Redirecting to ${name}`>
-    <meta http-equiv="refresh" content=`0; URL=${link}` slot="head">
-    <link rel="canonical" href={link} slot="head">
-    <H1>Redirecting...</H1>
-    <P class="text-lg">You are being redirected. If you are not redirected soon, <Link href={link}>click here</Link>.</P>
+	<meta http-equiv="refresh" content=`0; URL=${url}` slot="head">
+	<link rel="canonical" href={url as string} slot="head">
+	<H1>Redirecting...</H1>
+	<P class="text-lg">You are being redirected. If you are not redirected soon, <Link url={url}>click here</Link>.</P>
 </Layout>
