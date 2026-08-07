@@ -3,6 +3,7 @@ import P from "../components/Paragraph.astro";
 import NavLink from "../components/NavLink.astro";
 import "../styles/global.css";
 import Badge from "../components/Badge.astro";
+import Link from "../components/Link.astro";
 
 interface Props {
 	title: string;
@@ -39,6 +40,7 @@ const { title } = Astro.props;
 		<footer class="grid grid-cols-1 justify-items-center sticky top-full lg:pt-4 lg:pb-4 md:pb-2 md:pt-2 text-gray-950 dark:text-gray-50 bg-gray-300 dark:bg-gray-600 h-fit w-screen ">
 			<slot name="footer" />
 			<P>Copyright (c) Sylv, Vulpixel, {new Date().getUTCFullYear()}</P>
+			<P><Link url="https://github.com/VulpixelMC/website">Website Source Code</Link></P>
 		</footer>
 	</body>
 </html>
