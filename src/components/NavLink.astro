@@ -6,4 +6,4 @@ interface Props {
 const { link } = Astro.props;
 ---
 
-<a class="lg:p-2 p-1 nav-element nav-btn mobile-select-none" href={link}><slot /></a>
+<a class="lg:p-2 p-1 nav-btn touchscreen:select-none" href={link}><slot /></a>

@@ -11,17 +11,18 @@
 	font-variation-settings: "MONO" 1.0;
 }
 
+@custom-variant touchscreen {
+	@media (hover: none) {
+		@slot;
+	}
+};
+
 @theme {
 	--font-sans: "Recursive", sans-serif;
 	--font-monospace: "Recursive Mono", monospace;
 	--color-generic-white: var(--color-gray-300);
 	--color-generic-gray: var(--color-gray-400);
 	--color-generic-black: var(--color-gray-900);
-}
-
-@utility mobile-select-none {
-	/* prevent mobile users from accidentally selecting text where inappropriate */
-	@apply lg:select-auto select-none; 
 }
 
 @utility nav-element {
